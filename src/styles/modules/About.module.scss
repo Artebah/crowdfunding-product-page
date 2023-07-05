@@ -1,0 +1,85 @@
+@use "../vars/colors.scss" as colors;
+@use "../mixins.scss" as mixins;
+
+.about {
+  @include mixins.flexColumn;
+  gap: 35px;
+}
+
+.title {
+  @include mixins.title(22);
+}
+.services {
+  @include mixins.flexColumn;
+  gap: 30px;
+}
+.service-card {
+  @include mixins.flexColumn;
+  gap: 20px;
+  padding: 30px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+
+  &.disabled-card {
+    opacity: 0.5;
+  }
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+
+  .title {
+    @include mixins.title(20);
+  }
+}
+
+.pledge {
+  color: colors.$lightGreen;
+  font-weight: 500;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.places-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  span {
+    font-weight: 700;
+    font-size: 24px;
+    color: #000;
+  }
+}
+
+@media (max-width: 767px) {
+  .about {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  .bottom {
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .places-left {
+    span {
+      font-size: 32px;
+    }
+  }
+  .service-card {
+    padding: 30px 15px;
+  }
+}

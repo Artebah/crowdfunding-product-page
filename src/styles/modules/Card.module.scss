@@ -1,0 +1,150 @@
+@use "../vars/colors.scss" as colors;
+@use "../mixins.scss" as mixins;
+
+.card {
+  margin-top: -50px;
+}
+.container {
+  max-width: 720px;
+  padding: 0px 15px;
+  margin: 0 auto 0;
+
+  & > div {
+    background: #fff;
+    border-radius: 8px;
+    padding: 40px;
+    border: 2px solid #f6f6f6;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  .header {
+    padding-top: 60px;
+    position: relative;
+  }
+}
+
+// header
+.logo {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+}
+.subtitle {
+  margin-top: 25px;
+  text-align: center;
+}
+.actions {
+  margin-top: 50px;
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+// header
+
+// score
+.score-items {
+  display: flex;
+}
+.score-item {
+  &:not(:last-child) {
+    padding-right: 40px;
+    border-right: 1px solid #dbdbdb;
+  }
+  &:not(:first-child) {
+    padding-left: 40px;
+  }
+
+  h4 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #000;
+  }
+  p {
+    margin-top: 10px;
+  }
+}
+.progress-bar {
+  margin-top: 30px;
+  height: 10px;
+  width: 100%;
+  background: #f4f4f4;
+  border-radius: 10px;
+  position: relative;
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: inline-block;
+    background: colors.$lightGreen;
+    border-radius: 10px;
+  }
+}
+// score
+
+@media (max-width: 767px) {
+  .container {
+    & > div {
+      padding: 40px 20px;
+    }
+    .header {
+      padding: 40px 20px;
+    }
+  }
+  .title {
+    font-size: 24px;
+  }
+  .subtitle {
+    margin-top: 15px;
+  }
+  .actions {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .score-items {
+    flex-direction: column;
+    text-align: center;
+  }
+  .score-item {
+    position: relative;
+
+    &:not(:first-child) {
+      padding-left: 0px;
+    }
+    &:not(:last-child) {
+      border-right: 0px;
+      padding-right: 0px;
+
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 1px;
+        background: #dbdbdb;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+  .progress-bar {
+    height: 15px;
+  }
+}

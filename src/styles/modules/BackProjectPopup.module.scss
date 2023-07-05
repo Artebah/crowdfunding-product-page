@@ -1,0 +1,12 @@
+@use "../mixins.scss" as mixins;
+
+.title {
+  @include mixins.title(22);
+}
+.text {
+  margin: 20px 0;
+}
+.cards {
+  @include mixins.flexColumn;
+  gap: 30px;
+}

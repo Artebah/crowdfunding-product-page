@@ -1,0 +1,9 @@
+@mixin title($size: 18) {
+  color: #000;
+  font-weight: 700;
+  font-size: $size + px;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}

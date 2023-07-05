@@ -1,0 +1,16 @@
+@use "./vars/colors.scss" as colors;
+
+@import url(./null-styles.css);
+@import url(https://fonts.googleapis.com/css?family=Commissioner:regular,500,700);
+
+body {
+  font-family: Commissioner;
+  background: #fafafa;
+  &._locked {
+    overflow: hidden;
+  }
+}
+p {
+  line-height: 1.6;
+  color: colors.$text;
+}
